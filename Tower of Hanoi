@@ -1,0 +1,17 @@
+public class Recursion {
+    public static void towerOfHanoi(String src , String helper , String dest , int n) {
+        if(n==1){
+            System.out.println("Transfer Disk "+n+" from "+src+" to "+dest);
+            return;
+        }
+
+        towerOfHanoi(src, dest, helper, n-1);
+        System.out.println("Transfer Disk "+n+" from "+src+" to "+dest);
+        towerOfHanoi(helper, src, dest, n-1);
+    }
+
+    public static void main(String[] args) {
+        int n = 2;
+        towerOfHanoi("S", "H", "D", n);
+    }
+}
